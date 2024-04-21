@@ -14,6 +14,7 @@ return {
     },
   },
 
+  -- * adds harpoon to status line
   {
     "nvim-lualine/lualine.nvim",
     opts = function()
@@ -30,7 +31,6 @@ return {
         local filename = fullpath:match(pattern)
         return filename
       end
-
 
       local icons = require("lazyvim.config").icons
       return {
@@ -88,7 +88,7 @@ return {
   -- Disables
   { "rcarriga/nvim-notify", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-  { "nvim-treesitter/nvim-treesitter-context", enabled = false}, 
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
   -- override LazyVim
   { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin-frappe" } },
 }
