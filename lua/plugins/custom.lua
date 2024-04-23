@@ -1,6 +1,10 @@
 return {
   -- Plugins
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
   {
     "ThePrimeagen/harpoon",
     keys = {
