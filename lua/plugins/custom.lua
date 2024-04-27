@@ -4,6 +4,9 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     "ThePrimeagen/harpoon",
@@ -16,6 +19,28 @@ return {
         desc = "Harpoon File",
       },
     },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      filetypes = { ["."] = true },
+    },
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        -- Recommended - see "Configuring" below for more config options
+        transparent = true,
+        italic_comments = false,
+        hide_fillchars = false,
+        borderless_telescope = true,
+        terminal_colors = true,
+      })
+      vim.cmd("colorscheme cyberdream") -- set the colorscheme
+    end,
   },
 
   -- * adds harpoon to status line
@@ -35,9 +60,12 @@ return {
         local filename = fullpath:match(pattern)
         return filename
       end
-
+      local cyberdream = require("lualine.themes.cyberdream")
       local icons = require("lazyvim.config").icons
       return {
+        optiosn = {
+          theme = cyberdream,
+        },
         sections = {
           lualine_c = {
             LazyVim.lualine.root_dir(),

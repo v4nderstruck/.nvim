@@ -9,5 +9,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.exrc = true
 
+vim.g.lazyvim_python_lsp = "pyright"
 -- debug
 vim.lsp.set_log_level("debug")
