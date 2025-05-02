@@ -1,13 +1,4 @@
 return {
-  -- Plugins
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      transparent_background = true,
-    },
-  },
   {
     "ThePrimeagen/harpoon",
     keys = {
@@ -21,19 +12,13 @@ return {
     },
   },
   {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      filetypes = { ["."] = true },
-    },
-  },
-  {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       require("cyberdream").setup({
         -- Recommended - see "Configuring" below for more config options
-        transparent = true,
+        transparent = false,
         italic_comments = false,
         hide_fillchars = false,
         borderless_telescope = true,
@@ -42,7 +27,6 @@ return {
       vim.cmd("colorscheme cyberdream") -- set the colorscheme
     end,
   },
-
   -- * adds harpoon to status line
   {
     "nvim-lualine/lualine.nvim",
@@ -117,10 +101,18 @@ return {
     end,
   },
 
+  { "nvim-neo-tree/neo-tree.nvim", enabled = true, opts = { window = { position = "right" } } },
   -- Disables
   { "rcarriga/nvim-notify", enabled = false },
-  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "nvim-treesitter/nvim-treesitter-context", enabled = false },
-  -- override LazyVim
-  { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin-frappe" } },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        clangd = {
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" },
+        },
+      },
+    },
+  },
 }
