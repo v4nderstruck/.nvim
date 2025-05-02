@@ -8,6 +8,7 @@ vim.opt.scrolloff = 15
 vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.exrc = true
+vim.opt.guifont = "Fira Code:h11"
 
 vim.g.lazyvim_python_lsp = "pyright"
 -- debug
