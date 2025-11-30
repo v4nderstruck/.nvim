@@ -12,4 +12,4 @@ vim.opt.guifont = "Fira Code:h11"
 
 vim.g.lazyvim_python_lsp = "pyright"
 -- debug
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
