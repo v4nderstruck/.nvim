@@ -118,6 +118,8 @@ return {
   -- Disables
   { "rcarriga/nvim-notify", enabled = false },
   { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+  { "nvim-treesitter/nvim-treesitter", enabled = false },
+  { "folke/noice.nvim", enabled = false },
   {
     "neovim/nvim-lspconfig",
     opts = {
